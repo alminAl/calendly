@@ -1,6 +1,7 @@
 import React from "react";
+import Footer from "../components/SharedComponent/Footer/Footer";
+import Navbar from "../components/SharedComponent/Navbar/Navbar";
 
-import Navbar from "../components/HomeComponent/Navbar/Navbar";
 const Layout = ({ children }) => {
   return (
     <div>
@@ -20,7 +21,9 @@ const Layout = ({ children }) => {
         <br /> */}
       </nav>
       <main>{children}</main>
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

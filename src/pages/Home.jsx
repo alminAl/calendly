@@ -1,10 +1,13 @@
 import React from 'react'
+import Header from '../components/HomeComponent/Header/Header'
+import Solution from '../components/HomeComponent/Solution/Solution'
 
 const Home = () => {
   return (
-    <div> <h1 class="text-3xl font-bold text-center">
-    Hello world 1
-  </h1></div>
+   <div>
+     <Header/>
+     <Solution/>
+   </div>
   )
 }
 
