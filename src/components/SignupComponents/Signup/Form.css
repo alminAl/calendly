@@ -1,0 +1,17 @@
+.heading {
+    color: #1E40AF;
+}
+
+.btnColour {
+    background-color: #1E40AF;
+    padding: 8px 0;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid gray;
+    cursor: pointer;
+}
+
+.btnColour:hover {
+    background-color: white;
+    color: #1E40AF;
+}

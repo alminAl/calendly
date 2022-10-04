@@ -3,6 +3,7 @@ import Sales from "../../../assets/images/sales.webp";
 import Recruiting from "../../../assets/images/Recruiting.webp";
 import Customer_Succes from "../../../assets/images/Customer_Success.webp";
 import Education from "../../../assets/images/Education.webp";
+
 const Solution = () => {
   return (
     <div>
