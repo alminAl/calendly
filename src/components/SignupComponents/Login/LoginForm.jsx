@@ -5,8 +5,8 @@ const LoginForm = () => {
     return (
         <div>
             <div className='mt-6'>
-                <h1 className='text-center text-2xl lg:text-5xl font-bold heading'>CALENDLY</h1>
-                <h5 className='text-center text-base lg:text-2xl font-bold '>Login with Calendry for free</h5>
+                <h1 className='text-center text-2xl lg:text-5xl font-bold'>Welcome back to <span className='heading'>CALENDLY</span></h1>
+                <h5 className='text-center text-base lg:text-2xl font-bold '>Log in to your account to get back to your hub for scheduling meetings.</h5>
             </div>
             <div className='flex justify-center items-center mt-5 mb-20'>
                 <div className="card w-11/12 lg:w-2/5 md:w-2/4 bg-secondary shadow-xl rounded-lg">
