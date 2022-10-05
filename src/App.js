@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Teams from "./pages/Teams";
+import DashboardMain from "./components/Dashboard/DashboardMain";
 function App() {
   return (
     <div>
@@ -20,6 +21,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/test" element={<DashboardMain />} />
           </Routes>
         </Layout>
       </BrowserRouter>
