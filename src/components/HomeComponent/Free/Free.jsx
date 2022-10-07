@@ -1,6 +1,6 @@
 import React from "react";
 
-const Team = () => {
+const Free = () => {
   return (
     <section style={{ "backgroundColor": "#f7faff" }}>
       <div className="container mx-auto px-6 text-center py-20">
@@ -18,4 +18,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default Free;
