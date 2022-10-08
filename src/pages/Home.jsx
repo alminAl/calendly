@@ -6,14 +6,16 @@ import Schedule from "../components/HomeComponent/Schedule/Schedule";
 import Solution from "../components/HomeComponent/Solution/Solution";
 import Sponsors from "../components/HomeComponent/Sponsors/Sponsors";
 import Free from "../components/HomeComponent/Free/Free";
+import Calendly from "../components/HomeComponent/Calendly/Calendly";
 
 const Home = () => {
   return (
     <div>
       <Header />
       <Schedule />
-      <Solution />
+      <Calendly/>
       <Sponsors />
+      <Solution /> 
       <Free />
       {/* <Newslatter/> */}
     </div>
