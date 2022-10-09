@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import CreateEvent from './CreateEvent';
 
 const DashboardMain = () => {
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     const handleOpen = () => setOpen(!open);
-   
+
     return (
 
         <div>
@@ -90,7 +90,7 @@ const DashboardMain = () => {
 
 
 
-                <CreateEvent show={open} />
+                <CreateEvent show={open} close={() => handleOpen} />
             </div>
         </div>
     );

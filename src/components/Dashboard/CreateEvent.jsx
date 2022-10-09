@@ -20,8 +20,8 @@ const CreateEvent = (props) => {
         <div>
 
             <Modal
-                open={!props.show}
-                onClose={props.show}
+                open={props.show}
+                onClose={props.close()}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
