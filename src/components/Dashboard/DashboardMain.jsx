@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import CreateEvent from './CreateEvent';
 
 const DashboardMain = () => {
+    const [open, setOpen] = useState(true);
+
+    const handleOpen = () => setOpen(!open);
+   
     return (
+
         <div>
             <div className="container mx-auto md:px-44 xl:px-52">
                 <div className="dasboard-head flex sm:flex-col  lg:flex-row md:flex-row  justify-between py-8">
@@ -17,7 +23,7 @@ const DashboardMain = () => {
 
                     <div className="event-create-action">
 
-                        <button className='bg-blue-500 py-2 px-4 rounded-full text-white'>Create Event</button>
+                        <button onClick={handleOpen} className='bg-blue-500 py-2 px-4 rounded-full text-white'>Create Event</button>
 
                     </div>
                 </div>
@@ -84,6 +90,7 @@ const DashboardMain = () => {
 
 
 
+                <CreateEvent show={open} />
             </div>
         </div>
     );
