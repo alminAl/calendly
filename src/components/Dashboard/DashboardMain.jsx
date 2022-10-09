@@ -5,11 +5,12 @@ const DashboardMain = () => {
         <div>
             <div className="container">
                 <div className="dasboard-head">
-                    <div className="d-board-user-unfo">
+                    <div className="d-board-user-info">
 
-                        <div className="Alphabet-dp"></div>
+                        <div className="Alphabet-dp w-12 h-12 rounded-full flex justify-center  items-center bg-slate-300">B</div>
                         <div className="User-name">
-
+                            <h6>Badhon Jamil</h6>
+                            <a className='text-blue-700' href="https://calendly.com/badhon">calendly.com/badhon</a>
                         </div>
 
                     </div>
