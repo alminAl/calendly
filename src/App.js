@@ -22,7 +22,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
-            <Route path="/test" element={<DashboardMain />} />
+            <Route path="/dashboard" element={<DashboardMain />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
         </Layout>
