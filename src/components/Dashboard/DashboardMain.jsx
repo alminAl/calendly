@@ -23,7 +23,7 @@ const DashboardMain = () => {
                 </div>
 
 
-                <div className="event-card py-10 grid md:grid-cols-3 xs:grid-cols-1 gap-x-10">
+                <div className="event-card py-10 grid lg:grid-cols-3  md:grid-cols-2  xs:grid-cols-1 gap-x-10 gap-y-5">
 
 
                     {/* card1 */}
