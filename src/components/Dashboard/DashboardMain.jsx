@@ -3,9 +3,9 @@ import React from 'react';
 const DashboardMain = () => {
     return (
         <div>
-            <div className="container mx-auto md:px-44 ">
-                <div className="dasboard-head flex justify-between py-8">
-                    <div className="d-board-user-info flex gap-2">
+            <div className="container mx-auto md:px-44 xl:px-52">
+                <div className="dasboard-head flex sm:flex-col  lg:flex-row md:flex-row  justify-between py-8">
+                    <div className="d-board-user-info flex  gap-2 ">
 
                         <div className="Alphabet-dp w-12 h-12 rounded-full flex justify-center  items-center bg-slate-300">B</div>
                         <div className="User-name">
@@ -23,7 +23,7 @@ const DashboardMain = () => {
                 </div>
 
 
-                <div className="event-card py-10 grid lg:grid-cols-3  md:grid-cols-2  xs:grid-cols-1 gap-x-10 gap-y-5">
+                <div className="event-card py-10 grid lg:grid-cols-3 justify-items-center  md:grid-cols-2  xs:grid-cols-1 gap-x-10 gap-y-5">
 
 
                     {/* card1 */}
