@@ -23,9 +23,27 @@ const DashboardMain = () => {
                 </div>
 
 
-                <div className="event-card py-10">
+                <div className="event-card py-10 grid md:grid-cols-3 xs:grid-cols-1 gap-x-10">
 
 
+                    {/* card1 */}
+                    <div class="flex  gap-x-3">
+                        <div class="block  rounded-lg shadow-2xl bg-white max-w-xs   py-14 px-8 border-t-2 border-blue-900">
+                            <button class="rounded-full bg-sky-600 px-2 py-1">Technology</button>
+
+                            <h5 class="text-gray-900 text-xl leading-tight md:font-medium mb-2">15 Minutes Meeting</h5>
+
+                            <h6 className='text-gray-500'>15 min one to one</h6>
+
+                            <hr />
+                            <div className="event-join mt-5 flex justify-end">
+                                <button style={{ backgroundColor: "#312E81", color: 'white' }} className='rounded-md p-2 '>Join Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    {/* card2 */}
 
                     <div class="flex  ">
                         <div class="block  rounded-lg shadow-2xl bg-white max-w-xs   py-14 px-8 border-t-2 border-blue-900">
@@ -40,7 +58,27 @@ const DashboardMain = () => {
                                 <button style={{ backgroundColor: "#312E81", color: 'white' }} className='rounded-md p-2 '>Join Now</button>
                             </div>
                         </div>
+
+
+
                     </div>
+                    {/* card3 */}
+                    <div class="flex  ">
+                        <div class="block  rounded-lg shadow-2xl bg-white max-w-xs   py-14 px-8 border-t-2 border-blue-900">
+                            <button class="rounded-full bg-sky-600 px-2 py-1">Technology</button>
+
+                            <h5 class="text-gray-900 text-xl leading-tight md:font-medium mb-2">15 Minutes Meeting</h5>
+
+                            <h6 className='text-gray-500'>15 min one to one</h6>
+
+                            <hr />
+                            <div className="event-join mt-5 flex justify-end">
+                                <button style={{ backgroundColor: "#312E81", color: 'white' }} className='rounded-md p-2 '>Join Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
 
 
