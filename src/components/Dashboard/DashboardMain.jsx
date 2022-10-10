@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import CreateEvent from './CreateEvent';
 
 const DashboardMain = () => {
@@ -33,11 +33,11 @@ const DashboardMain = () => {
 
 
                     {/* card1 */}
-                    <div class="flex  gap-x-3">
-                        <div class="block  rounded-lg shadow-2xl bg-white max-w-xs   py-14 px-8 border-t-2 border-blue-900">
-                            <button class="rounded-full bg-sky-600 px-2 py-1">Technology</button>
+                    <div className="flex  gap-x-3">
+                        <div className="block  rounded-lg shadow-2xl bg-white max-w-xs   py-14 px-8 border-t-2 border-blue-900">
+                            <button className="rounded-full bg-sky-600 px-2 py-1">Technology</button>
 
-                            <h5 class="text-gray-900 text-xl leading-tight md:font-medium mb-2">15 Minutes Meeting</h5>
+                            <h5 className="text-gray-900 text-xl leading-tight md:font-medium mb-2">15 Minutes Meeting</h5>
 
                             <h6 className='text-gray-500'>15 min one to one</h6>
 
@@ -51,11 +51,11 @@ const DashboardMain = () => {
 
                     {/* card2 */}
 
-                    <div class="flex  ">
-                        <div class="block  rounded-lg shadow-2xl bg-white max-w-xs   py-14 px-8 border-t-2 border-blue-900">
-                            <button class="rounded-full bg-sky-600 px-2 py-1">Technology</button>
+                    <div className="flex  ">
+                        <div className="block  rounded-lg shadow-2xl bg-white max-w-xs   py-14 px-8 border-t-2 border-blue-900">
+                            <button className="rounded-full bg-sky-600 px-2 py-1">Technology</button>
 
-                            <h5 class="text-gray-900 text-xl leading-tight md:font-medium mb-2">15 Minutes Meeting</h5>
+                            <h5 className="text-gray-900 text-xl leading-tight md:font-medium mb-2">15 Minutes Meeting</h5>
 
                             <h6 className='text-gray-500'>15 min one to one</h6>
 
@@ -69,11 +69,11 @@ const DashboardMain = () => {
 
                     </div>
                     {/* card3 */}
-                    <div class="flex  ">
-                        <div class="block  rounded-lg shadow-2xl bg-white max-w-xs   py-14 px-8 border-t-2 border-blue-900">
-                            <button class="rounded-full bg-sky-600 px-2 py-1">Technology</button>
+                    <div className="flex  ">
+                        <div className="block  rounded-lg shadow-2xl bg-white max-w-xs   py-14 px-8 border-t-2 border-blue-900">
+                            <button className="rounded-full bg-sky-600 px-2 py-1">Technology</button>
 
-                            <h5 class="text-gray-900 text-xl leading-tight md:font-medium mb-2">15 Minutes Meeting</h5>
+                            <h5 className="text-gray-900 text-xl leading-tight md:font-medium mb-2">15 Minutes Meeting</h5>
 
                             <h6 className='text-gray-500'>15 min one to one</h6>
 
