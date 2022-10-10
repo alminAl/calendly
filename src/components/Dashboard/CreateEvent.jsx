@@ -24,7 +24,7 @@ import { createScheduleValidation } from "../../validators/eventScheduleValidati
 //   p: 4,
 // };
 
-const CreateEvent = (props) => {
+const CreateEvent = ({open, setOpen}) => {
   //   console.log(props);
 
   /** form submision */
@@ -47,6 +47,7 @@ const CreateEvent = (props) => {
     onSubmit: async (data, action) => {
       try {
         console.log(data);
+        setOpen(!open)
         resetForm();
       } catch (error) {}
     },
@@ -70,18 +71,18 @@ const CreateEvent = (props) => {
                 </Box>
             </Modal> */}
       {/* use dialog it's have better designm than modal */}
-      <Dialog open={props.show} onClose={props.close()} fullWidth maxWidth="sm">
-        <DialogTitle id="alert-dialog-title">
-          {"Use Google's location service?"}
+      <Dialog open={open} onClose={() => setOpen(!open)} fullWidth maxWidth="sm">
+        <DialogTitle>
+          {"Create Event"}
         </DialogTitle>
         <form onSubmit={handleSubmit} noValidate autoComplete="off">
           <DialogContent>
             <TextField
               fullWidth
-              required
+              required 
               placeholder="Zoom Meating"
               size="small"
-              label="Product Title"
+              label="Event Title"
               name="title"
               value={values.title}
               onChange={handleChange}
@@ -91,7 +92,7 @@ const CreateEvent = (props) => {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={props.close()}>Disagree</Button>
+            <Button onClick={() => setOpen(!open)}>Disagree</Button>
             {/* <Button onClick={props.close()}>Save</Button> */}
             <LoadingButton
               // fullWidth

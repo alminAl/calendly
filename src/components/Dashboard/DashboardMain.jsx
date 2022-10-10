@@ -4,7 +4,7 @@ import CreateEvent from './CreateEvent';
 const DashboardMain = () => {
     const [open, setOpen] = useState(false);
 
-    const handleOpen = () => setOpen(!open);
+    // const handleOpen = () => setOpen(!open);
 
     return (
 
@@ -23,7 +23,7 @@ const DashboardMain = () => {
 
                     <div className="event-create-action">
 
-                        <button onClick={handleOpen} className='bg-blue-500 py-2 px-4 rounded-full text-white'>Create Event</button>
+                        <button onClick={() => setOpen(!open)} className='bg-blue-500 py-2 px-4 rounded-full text-white'>Create Event</button>
 
                     </div>
                 </div>
@@ -89,8 +89,7 @@ const DashboardMain = () => {
 
 
 
-
-                <CreateEvent show={open} close={() => handleOpen} />
+                <CreateEvent open={open} setOpen={() => setOpen(!open)} />
             </div>
         </div>
     );
