@@ -1,4 +1,4 @@
-import { Box, Button, Modal, Typography } from '@mui/material';
+import { Box, Button, Modal, TextField, Typography } from '@mui/material';
 import React from 'react';
 
 
@@ -27,11 +27,13 @@ const CreateEvent = (props) => {
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
+                        Create Event
                     </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </Typography>
+                    <TextField style={{ margin: '10px' }} fullWidth id="filled-basic" label="Event Title" variant="filled" />
+                    <TextField fullWidth id="filled-basic" label="Description" variant="filled" className='' />
+
+                    <Button className='' sx={{ mx: "auto" }} variant="contained">Submit</Button>
+
                 </Box>
             </Modal>
 
