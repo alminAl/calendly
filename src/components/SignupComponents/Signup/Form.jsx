@@ -11,10 +11,9 @@ const Form = () => {
     const [confirm, setConfirm] = useState('')
     const { signup, error, isLoading } = useSignup()
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-
-        await signup(name, email, address, phone, password)
+        signup(name, email, address, phone, password)
     }
     return (
         <div>
