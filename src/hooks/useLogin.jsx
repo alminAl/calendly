@@ -10,7 +10,7 @@ export const useLogin = () => {
         setIsLoading(true)
         setError(null)
 
-        const response = await fetch('https://calendly-api.onrender.com/api/auth/login/', {
+        const response = await fetch(`${process.env.REACT_APP_API_BASE_URL}/api/auth/login/`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password })
