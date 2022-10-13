@@ -1,16 +1,20 @@
-import { LoadingButton } from "@mui/lab";
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { DateTimePicker, LoadingButton, LocalizationProvider } from "@mui/lab";
 import {
   Button,
   Dialog,
   DialogActions,
   DialogContent,
   DialogTitle,
+  OutlinedInput,
   TextField,
 } from "@mui/material";
 
 import SaveIcon from "@mui/icons-material/Save";
 import { useFormik } from "formik";
 import { createScheduleValidation } from "../../validators/eventScheduleValidation";
+import dayjs from "dayjs";
+import { useState } from "react";
 
 // const style = {
 //   position: "absolute",
@@ -24,9 +28,9 @@ import { createScheduleValidation } from "../../validators/eventScheduleValidati
 //   p: 4,
 // };
 
-const CreateEvent = ({open, setOpen}) => {
+const CreateEvent = ({ open, setOpen }) => {
   //   console.log(props);
-
+  const [value, setValue] = useState(dayjs('2014-08-18T21:11:54'))
   /** form submision */
   const {
     handleChange,
@@ -49,7 +53,7 @@ const CreateEvent = ({open, setOpen}) => {
         console.log(data);
         setOpen(!open)
         resetForm();
-      } catch (error) {}
+      } catch (error) { }
     },
   });
 
@@ -79,7 +83,7 @@ const CreateEvent = ({open, setOpen}) => {
           <DialogContent>
             <TextField
               fullWidth
-              required 
+              required
               placeholder="Zoom Meating"
               size="small"
               label="Event Title"
@@ -90,6 +94,22 @@ const CreateEvent = ({open, setOpen}) => {
               error={touched.title && Boolean(errors.title)}
               helperText={touched.title && errors.title}
             />
+
+            <TextField
+              sx={{ margin: '5px 0' }}
+              fullWidth
+              name="decription"
+              label="Description"
+              multiline
+              rows={3}
+              required
+              placeholder="Description"
+              variant="outlined"
+            />
+
+            <input style={{ width: '100%', border: '1px solid gray' }} type="datetime-local" id="meeting-time"
+              name="meeting-time" />
+
           </DialogContent>
           <DialogActions>
             <Button onClick={() => setOpen(!open)}>Disagree</Button>
