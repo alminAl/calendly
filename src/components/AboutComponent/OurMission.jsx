@@ -113,26 +113,157 @@ const OurMission = () => {
           Calendly for Enterprise
         </Link>
       </div>
-      {
-        <div className={useDiv1 ? "hidden" : "visible"} id="div1">
-          <h1>This div one</h1>
+      <div className="text-center ml-20">
+        {
+          <div
+            className={
+              useDiv1
+                ? "hidden"
+                : "visible flex w-4/5 justify-center items-center mx-auto mb-10"
+            }
+            id="div1"
+          >
+            <div className="w-4/5">
+              <h1 className="text-3xl font-bold leading-loose tracking-widest">
+                Core Scheduling Platform
+              </h1>
+              <p className="text-xl leading-relaxed tracking-wider">
+                Automatically book meetings from your website, host a webinar or
+                class, or schedule calls with clients— while controlling your
+                availability and saving everyone time.
+              </p>
+              <Link className="text-blue-600 ">
+                Lear How you can schedule better with Calendly
+              </Link>
+            </div>
+            <div>
+              <img
+                className="w-4/5"
+                src="https://images.ctfassets.net/k0lk9kiuza3o/3LtFq03z9gsGFAE6qlsBWC/92895d4b496ad39650176d6b515c2e66/One-Click-Scheduling.png?w=1162&h=930&q=50&fm=webp"
+                alt=""
+                srcset=""
+              />
+            </div>
+          </div>
+        }
+        {
+          <div
+            className={
+              useDiv2
+                ? "hidden"
+                : "visible flex w-4/5 justify-center items-center mx-auto mb-10"
+            }
+            id="div2"
+          >
+            <div className="w-4/5">
+              <h1 className="text-3xl font-bold leading-loose tracking-widest">
+                The Time Economy
+              </h1>
+              <p className="text-xl leading-relaxed tracking-wider">
+                Our most precious resource is time — and the next decade will be
+                defined by how we manage it. Calendly surveyed 1,000 knowledge
+                workers to learn more about how they value and use their time
+              </p>
+              <Link className="text-blue-600">Read The Report</Link>
+            </div>
+            <div>
+              <img
+                className="w-4/5"
+                src="https://images.ctfassets.net/k0lk9kiuza3o/6Dw764zKInZ67WJNj3jnNy/7dd4e8924162b4787def4d6b4ea38622/Calendly-time-economy.png?w=1140&h=930&q=50&fm=webp"
+                alt=""
+                srcset=""
+              />
+            </div>
+          </div>
+        }
+        {
+          <div
+            className={
+              useDiv3
+                ? "hidden"
+                : "visible  flex w-4/5 justify-center items-center mx-auto mb-10"
+            }
+            id="div3"
+          >
+            <div className="w-4/5">
+              <h1 className="text-3xl font-bold leading-loose tracking-widest">
+                Industry Solutions
+              </h1>
+              <p className="text-xl leading-relaxed tracking-wider">
+                Whether you lead a Sales, Marketing, Recruiting, Customer
+                Success, Education or other team, we have solutions that meet
+                your department needs.
+              </p>
+              <Link className="text-blue-600">
+                {" "}
+                Learn more about Calendly industry Solution
+              </Link>
+            </div>
+            <div>
+              <img
+                className="w-4/5"
+                src="https://images.ctfassets.net/k0lk9kiuza3o/7KV1x6LkDfC2MZyAq5iRNa/ae3a80986ce68ab82780fe7463e83490/Calendly-Our-values__2_.png?w=1140&h=930&q=50&fm=webp"
+                alt=""
+                srcset=""
+              />
+            </div>
+          </div>
+        }
+        {
+          <div
+            className={
+              useDiv4
+                ? "hidden"
+                : "visible  flex w-4/5 justify-center items-center mx-auto mb-10"
+            }
+            id="div4"
+          >
+            <div className="w-4/5">
+              <h1 className="text-3xl font-bold leading-loose tracking-widest">
+                Calendly for Enterprise
+              </h1>
+              <p className="text-xl leading-relaxed tracking-wider">
+                Hundreds of coworkers use Calendly. Standardize in one secure,
+                centrally- managed account where you have more control and they
+                can work more efficiently.
+              </p>
+              <Link className="text-blue-600">
+                Learn why teams love Calandly for enterprise
+              </Link>
+            </div>
+            <div>
+              <img
+                className="w-4/5"
+                src="https://images.ctfassets.net/k0lk9kiuza3o/pBJfCTBRIEplLvChkwsvg/463003e92bce04f187a6bebec4dc7030/Frame_28798.png?w=1334&h=920&q=50&fm=webp"
+                alt=""
+                srcset=""
+              />
+            </div>
+          </div>
+        }
+      </div>
+      <div className="bg-gray-200">
+        <div className="mt-12 flex mx-auto w-4/5 justify-evenly items-center ">
+          <div>
+            <h1 className="text-6xl font-bold">Integrations and Extensions</h1>
+            <h1 className="text-xl font-semibold mt-5 tracking-widest leading-loose">
+              Boost productivity with integrations that fold right into your
+              workflow.
+            </h1>
+            <button className="bg-blue-600 p-5 rounded text-white font-bold mt-4">
+              Explore integrations
+            </button>
+          </div>
+          <div>
+            <img
+              className="imgin"
+              src="https://images.ctfassets.net/k0lk9kiuza3o/7pnp3ZIJHHNMJEYXSCktL/b04ce26084a30501984a14a2058efa36/Integrations-Calendly__1_.png?w=1582&h=1283&q=50&fm=webp"
+              alt=""
+              srcset=""
+            />
+          </div>
         </div>
-      }
-      {
-        <div className={useDiv2 ? "hidden" : "visible"} id="div2">
-          <h1>This div Two</h1>
-        </div>
-      }
-      {
-        <div className={useDiv3 ? "hidden" : "visible"} id="div3">
-          <h1>This div Three</h1>
-        </div>
-      }
-      {
-        <div className={useDiv4 ? "hidden" : "visible"} id="div4">
-          <h1>This div Four</h1>
-        </div>
-      }
+      </div>
     </div>
   );
 };
