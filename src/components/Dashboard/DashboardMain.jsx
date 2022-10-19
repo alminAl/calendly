@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import CreateEvent from './CreateEvent';
-
+import "./dashboard.css"
 const DashboardMain = () => {
     const [open, setOpen] = useState(false);
 
@@ -10,12 +10,12 @@ const DashboardMain = () => {
 
         <div>
             <div className="container mx-auto md:px-44 xl:px-52">
-                <div className="dasboard-head flex sm:flex-col  lg:flex-row md:flex-row  justify-between py-8">
+                <div className="dasboard-head flex   lg:flex-row md:flex-row  justify-between py-8">
                     <div className="d-board-user-info flex  gap-2 ">
 
                         <div className="Alphabet-dp w-12 h-12 rounded-full flex justify-center  items-center bg-slate-300">B</div>
                         <div className="User-name">
-                            <h6>Badhon Jamil</h6>
+                            <h6 >Badhon Jamil</h6>
                             <a className='text-blue-700' href="https://calendly.com/badhon">calendly.com/badhon</a>
                         </div>
                         <hr />
@@ -29,7 +29,7 @@ const DashboardMain = () => {
                 </div>
 
 
-                <div className="event-card py-10 grid lg:grid-cols-3 justify-items-center  md:grid-cols-2  xs:grid-cols-1 gap-x-10 gap-y-5">
+                <div className="event-card py-10 grid lg:grid-cols-3 justify-items-center  md:grid-cols-2  xs:grid-cols-1 gap-x-10 gap-y-5 md:gap-x-32">
 
 
                     {/* card1 */}
@@ -43,7 +43,8 @@ const DashboardMain = () => {
 
                             <hr />
                             <div className="event-join mt-5 flex justify-end">
-                                <button style={{ backgroundColor: "#312E81", color: 'white' }} className='rounded-md p-2 '>Join Now</button>
+                                <button style={{ backgroundColor: "#312E81", color: 'white', marginRight: '10px' }} className='rounded-md p-2 md:m-4 '>Join Now</button>
+                                <button style={{ backgroundColor: "#EE4B2B", color: 'white', marginRight: '10px' }} className='rounded-md p-2 md:m-4  '>Delete</button>
                             </div>
                         </div>
                     </div>
@@ -61,7 +62,8 @@ const DashboardMain = () => {
 
                             <hr />
                             <div className="event-join mt-5 flex justify-end">
-                                <button style={{ backgroundColor: "#312E81", color: 'white' }} className='rounded-md p-2 '>Join Now</button>
+                                <button style={{ backgroundColor: "#312E81", color: 'white', marginRight: '10px' }} className='rounded-md p-2 md:m-4 '>Join Now</button>
+                                <button style={{ backgroundColor: "#EE4B2B", color: 'white', marginRight: '10px' }} className='rounded-md p-2 md:m-4  '>Delete</button>
                             </div>
                         </div>
 
@@ -78,8 +80,9 @@ const DashboardMain = () => {
                             <h6 className='text-gray-500'>15 min one to one</h6>
 
                             <hr />
-                            <div className="event-join mt-5 flex justify-end">
-                                <button style={{ backgroundColor: "#312E81", color: 'white' }} className='rounded-md p-2 '>Join Now</button>
+                            <div className="event-join mt-5 flex justify-between">
+                                <button style={{ backgroundColor: "#312E81", color: 'white', marginRight: '10px' }} className='rounded-md p-2 md:m-4 '>Join Now</button>
+                                <button style={{ backgroundColor: "#EE4B2B", color: 'white', marginRight: '10px' }} className='rounded-md p-2 md:m-4  '>Delete</button>
                             </div>
                         </div>
                     </div>
@@ -91,6 +94,8 @@ const DashboardMain = () => {
 
                 <CreateEvent open={open} setOpen={() => setOpen(!open)} />
             </div>
+
+
         </div>
     );
 };
