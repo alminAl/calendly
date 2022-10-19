@@ -43,7 +43,7 @@ const CreateEvent = ({ open, setOpen }) => {
   } = useFormik({
     initialValues: {
       title: "",
-      description: "",
+
     },
     validationSchema: createScheduleValidation,
     onSubmit: async (data, action) => {
@@ -99,6 +99,8 @@ const CreateEvent = ({ open, setOpen }) => {
               sx={{ margin: '5px 0' }}
               fullWidth
               name="decription"
+
+              onChange={handleChange}
               label="Description"
               multiline
               rows={3}
@@ -107,8 +109,8 @@ const CreateEvent = ({ open, setOpen }) => {
               variant="outlined"
             />
 
-            <input style={{ width: '100%', border: '1px solid gray' }} type="datetime-local" id="meeting-time"
-              name="meeting-time" />
+            <input value={values.meetingtime} onChange={handleChange} style={{ width: '100%', border: '1px solid gray' }} type="datetime-local" id="meeting-time"
+              name="meetingtime" />
 
           </DialogContent>
           <DialogActions>
