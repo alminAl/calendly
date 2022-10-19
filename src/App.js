@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import Teams from "./pages/Teams";
 import DashboardMain from "./components/Dashboard/DashboardMain";
 import Error404 from "./components/SharedComponent/Error404/Error404";
+import About from "./pages/About";
 function App() {
   return (
     <div>
@@ -22,6 +23,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/about" element={<About />} />
             <Route path="/dashboard" element={<DashboardMain />} />
             <Route path="*" element={<Error404 />} />
           </Routes>

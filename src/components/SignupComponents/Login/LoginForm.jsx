@@ -7,9 +7,9 @@ const LoginForm = () => {
     const [password, setPassword] = useState('')
     const { login, error, isLoading } = useLogin()
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        await login(email, password)
+        login(email, password)
     }
     return (
         <div>
