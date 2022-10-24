@@ -1,20 +1,11 @@
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DateTimePicker, LoadingButton, LocalizationProvider } from "@mui/lab";
-import {
-  Button,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogTitle,
-  OutlinedInput,
-  TextField,
-} from "@mui/material";
+import { LoadingButton } from "@mui/lab";
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
 
 import SaveIcon from "@mui/icons-material/Save";
 import { useFormik } from "formik";
 import { createScheduleValidation } from "../../validators/eventScheduleValidation";
-import dayjs from "dayjs";
-import { useState } from "react";
+// import dayjs from "dayjs";
+// import { useState } from "react";
 
 // const style = {
 //   position: "absolute",
@@ -30,7 +21,7 @@ import { useState } from "react";
 
 const CreateEvent = ({ open, setOpen }) => {
   //   console.log(props);
-  const [value, setValue] = useState(dayjs('2014-08-18T21:11:54'))
+  // const [value, setValue] = useState(dayjs('2014-08-18T21:11:54'))
   /** form submision */
   const {
     handleChange,
