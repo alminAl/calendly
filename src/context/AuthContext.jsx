@@ -1,4 +1,7 @@
 import { createContext, useEffect, useReducer } from "react";
+import shallow from "zustand/shallow";
+import { useGetRequest } from "../hooks/requestMethods";
+import useProfileStore from "../store/useProfileStore";
 
 export const AuthContext = createContext();
 
@@ -17,6 +20,16 @@ export const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(authReducer, {
         user: null,
     });
+
+    // stirage management
+    const [setUserProfile] = useProfileStore(
+        (state) => [state.setUserProfile],
+        shallow
+    );
+
+    const { data, getData, } = useGetRequest();
+
+
     useEffect(() => {
         const user = JSON.parse(localStorage.getItem('user'))
 
@@ -25,7 +38,18 @@ export const AuthContextProvider = ({ children }) => {
         }
     }, [])
 
-    console.log("AuthContext state:", state);
+    useEffect(() => {
+        if (state?.user && !Boolean(data)) {
+            getData('/api/user/profile/', state?.user.token)
+
+        }
+        if (data) {
+            setUserProfile(data)
+        }
+
+    }, [state, data, getData, setUserProfile])
+
+    // console.log("AuthContext state:", state);
 
     return (
         <AuthContext.Provider value={{ ...state, dispatch }}>

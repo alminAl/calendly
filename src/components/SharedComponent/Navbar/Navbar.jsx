@@ -1,11 +1,24 @@
-import React from "react";
+import { Avatar, MenuItem } from "@mui/material";
+// import React, { useState } from "react";
 
 import { NavLink, Link } from "react-router-dom";
+import shallow from "zustand/shallow";
 
 import { useAuthContext } from "../../../hooks/useAuthContext";
 import { useLogout } from "../../../hooks/useLogout";
+import useProfileStore from "../../../store/useProfileStore";
 
 const Navbar = () => {
+
+  // glabal storage
+  const [userProfile] = useProfileStore(
+    (state) => [state.userProfile],
+    shallow
+  );
+
+  // const [open, setOpen] = useState(false);
+
+
   const { logout } = useLogout();
   const { user } = useAuthContext();
   return (
@@ -18,9 +31,11 @@ const Navbar = () => {
         </Link>
         <div className="flex md:order-2">
           <ul className="flex flex-col p-2 text-bold">
+
             <li>
               {" "}
               {user ? (
+
                 <button
                   className="text-lg font-bold block py-2 pr-4 pl-3 text-red-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   aria-current="page"
@@ -114,6 +129,31 @@ const Navbar = () => {
                 Services
               </NavLink>
             </li>
+
+            <li>
+              {user && userProfile && (
+                <>
+                  <Link to={"/profile"}>
+                    <MenuItem className='hover:bg-transparent'>
+                      <Avatar alt={userProfile?.name} src={userProfile?.profile_image ? userProfile?.profile_image : "#"} /> <span>{userProfile?.name}</span>
+                    </MenuItem>
+                  </Link>
+
+
+
+
+                  {/* <li className='lg:flex items-center space-x-3 text-base lg:my-0 my-7'>
+                  <span className='text-base  text-black font-sans'></span>
+                  <button
+                    onClick={() => logout()}
+                    className='border-2 text-[#106731] border-[#106731] px-4 py-2 rounded-lg uppercase hover:text-white hover:bg-[#106731] duration-200'>
+                    logout
+                  </button>
+                </li>  */}
+                </>
+              )}
+            </li>
+
           </ul>
         </div>
       </div>
