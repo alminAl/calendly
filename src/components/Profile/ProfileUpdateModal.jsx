@@ -75,10 +75,10 @@ const ProfileUpdateModal = ({ open, setOpen }) => {
         // resetForm,
     } = useFormik({
         initialValues: {
-            name: userProfile.name ?? '',
-            email: userProfile.email ?? '',
-            mobile_number: userProfile.mobile_number ?? '',
-            about: userProfile.about ?? '',
+            name: userProfile?.name ?? '',
+            email: userProfile?.email ?? '',
+            mobile_number: userProfile?.mobile_number ?? '',
+            about: userProfile?.about ?? '',
         },
         validationSchema: userProfileUpdateValidation,
         onSubmit: async (data, action) => {

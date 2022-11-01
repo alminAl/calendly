@@ -13,7 +13,7 @@ import About from "./pages/About";
 import { useAuthContext } from "./hooks/useAuthContext";
 function App() {
   const { user } = useAuthContext();
-  console.log(user);
+
   return (
     <div>
       <BrowserRouter>

@@ -21,7 +21,7 @@ const Profile = () => {
 
           <ProfileImage />
           <p className='capitalize text-xl font-extrabold'>
-            {userProfile.name}
+            {userProfile?.name}
           </p>
           {/* <p className='capitalize text-lg font-bold'>admin</p> */}
         </div>
@@ -33,15 +33,15 @@ const Profile = () => {
                   Full Name
                 </td>
                 <td className='py-2 capitalize font-semibold'>
-                  {userProfile.name}
+                  {userProfile?.name}
                 </td>
               </tr>
               <tr>
                 <td className='py-2 pr-10 capitalize font-extrabold'>
-                  {userProfile.name}
+                  {userProfile?.name}
                 </td>
                 <td className='py-2 font-semibold'>
-                  {userProfile.email}
+                  {userProfile?.email}
                 </td>
               </tr>
 
@@ -49,7 +49,7 @@ const Profile = () => {
                 <td className='py-2 pr-10 capitalize font-extrabold'>
                   mobile
                 </td>
-                <td className='py-2 font-semibold'>{userProfile.mobile_number}</td>
+                <td className='py-2 font-semibold'>{userProfile?.mobile_number}</td>
               </tr>
               <tr>
                 <td className='py-2 pr-10 capitalize font-extrabold'>
@@ -57,7 +57,7 @@ const Profile = () => {
                 </td>
                 <td className='py-2 font-semibold'>
 
-                  {userProfile.about}
+                  {userProfile?.about}
                 </td>
               </tr>
               <tr>
