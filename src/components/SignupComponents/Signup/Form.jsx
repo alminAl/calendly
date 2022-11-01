@@ -5,18 +5,19 @@ import './Form.css'
 const Form = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
-    const [address, setAddress] = useState('')
-    const [phone, setPhone] = useState('')
+
+    const [mobile_number, setMobile] = useState('');
     const [password, setPassword] = useState('')
-    const [confirm, setConfirm] = useState('')
+    const [about, setAbout] = useState('');
     const { signup, error, isLoading } = useSignup()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        signup(name, email, address, phone, password)
+        signup(name, email, mobile_number, about, password)
     }
     return (
         <div>
+
             <div className='mt-6'>
                 <h1 className='text-center text-2xl lg:text-5xl font-bold heading'>CALENDLY</h1>
                 <h5 className='text-center text-base lg:text-2xl font-bold '>Sign Up with Calendry for free</h5>
@@ -48,28 +49,36 @@ const Form = () => {
                                     value={email}
                                     className="input input-bordered w-full h-10 border-2 pl-1 rounded-lg" required />
                             </div>
+
                             <div className="form-control w-full my-4">
                                 <label className="label">
-                                    <span className="label-text">Address</span>
-                                </label>
-                                <input
-                                    type="text"
-                                    placeholder="Enter Your Address"
-                                    onChange={(e) => setAddress(e.target.value)}
-                                    value={address}
-                                    className="input input-bordered w-full h-10 border-2 pl-1 rounded-lg" required />
-                            </div>
-                            <div className="form-control w-full my-4">
-                                <label className="label">
-                                    <span className="label-text">Phone Number</span>
+                                    <span className="label-text">Your Phone</span>
                                 </label>
                                 <input
                                     type="text"
                                     placeholder="Enter Phone Number"
-                                    onChange={(e) => setPhone(e.target.value)}
-                                    value={phone}
-                                    className="input input-bordered w-full h-10 border-2 pl-1 rounded-lg" required />
+                                    onChange={(e) => setMobile(e.target.value)}
+                                    value={mobile_number}
+                                    className="input input-bordered w-full h-10 border-2 pl-1 rounded-lg" />
                             </div>
+
+                            <div className='form-control w-full my-4'>
+                                <label className='label'>
+                                    <span className='label-text'>About</span>
+                                </label>
+                                <textarea
+                                    type='text'
+                                    placeholder='About'
+                                    onChange={(e) => setAbout(e.target.value)}
+                                    value={about}
+                                    rows='4'
+                                    cols='50'
+                                    className='input input-bordered w-full h-10 border-2 pl-1 rounded-lg'
+                                    required
+                                />
+                            </div>
+
+
                             <div className="form-control w-full my-4">
                                 <label className="label">
                                     <span className="label-text">Password</span>
@@ -81,17 +90,7 @@ const Form = () => {
                                     value={password}
                                     className="input input-bordered w-full h-10 border-2 pl-1 rounded-lg" required />
                             </div>
-                            <div className="form-control w-full my-4">
-                                <label className="label">
-                                    <span className="label-text">Confirm Password</span>
-                                </label>
-                                <input
-                                    type="password"
-                                    placeholder="Enter Your Secret Password Again"
-                                    onChange={(e) => setConfirm(e.target.value)}
-                                    value={confirm}
-                                    className="input input-bordered w-full h-10 border-2 pl-1 rounded-lg" required />
-                            </div>
+
                             <input className='btn w-full mt-5 btnColour text-xl border-0 ' disabled={isLoading} type="submit" value="Submit" />
                             {error && <div className="text-red-500">{error}</div>}
                         </form>
