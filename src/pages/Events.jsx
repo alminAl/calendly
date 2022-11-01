@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import CreateEvent from './CreateEvent';
-import "./dashboard.css"
-const DashboardMain = () => {
+
+
+const Events = () => {
     const [open, setOpen] = useState(false);
 
     // const handleOpen = () => setOpen(!open);
@@ -100,4 +101,4 @@ const DashboardMain = () => {
     );
 };
 
-export default DashboardMain;
+export default Events;

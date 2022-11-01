@@ -59,8 +59,8 @@ const ProfileUpdateModal = ({ open, setOpen }) => {
         shallow
     );
     const { user } = useAuthContext();
-    const { data: getUpdateData, updateData } = usePatchRequest()
-
+    const { data: getUpdateData, updateData, error } = usePatchRequest()
+    console.log(error);
 
     /** form submision */
     const {
@@ -76,16 +76,20 @@ const ProfileUpdateModal = ({ open, setOpen }) => {
     } = useFormik({
         initialValues: {
             name: userProfile?.name ?? '',
-            email: userProfile?.email ?? '',
+            // email: userProfile?.email ?? '',
             mobile_number: userProfile?.mobile_number ?? '',
             about: userProfile?.about ?? '',
         },
         validationSchema: userProfileUpdateValidation,
         onSubmit: async (data, action) => {
+            console.log(data);
             try {
                 updateData('/api/user/profile/', user.token, data)
                 setOpen(!open)
-            } catch (error) { }
+            } catch (error) {
+
+                console.log(error)
+            }
         },
     })
     useEffect(() => {
@@ -126,7 +130,7 @@ const ProfileUpdateModal = ({ open, setOpen }) => {
                                     helperText={touched.name && errors.name}
                                 />
                             </div>
-                            <div className="my-2">
+                            {/* <div className="my-2">
                                 <TextField
                                     fullWidth
                                     required
@@ -140,7 +144,7 @@ const ProfileUpdateModal = ({ open, setOpen }) => {
                                     error={touched.email && Boolean(errors.email)}
                                     helperText={touched.email && errors.email}
                                 />
-                            </div>
+                            </div> */}
 
                             <div className="my-2">
                                 <TextField

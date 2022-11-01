@@ -38,7 +38,7 @@ const Profile = () => {
               </tr>
               <tr>
                 <td className='py-2 pr-10 capitalize font-extrabold'>
-                  {userProfile?.name}
+                  Email
                 </td>
                 <td className='py-2 font-semibold'>
                   {userProfile?.email}
