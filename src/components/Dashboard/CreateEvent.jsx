@@ -1,5 +1,12 @@
 import { LoadingButton } from "@mui/lab";
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle, TextField } from "@mui/material";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  TextField,
+} from "@mui/material";
 
 import SaveIcon from "@mui/icons-material/Save";
 import { useFormik } from "formik";
@@ -36,7 +43,7 @@ const CreateEvent = ({ open, setOpen }) => {
   } = useFormik({
     initialValues: {
       title: "",
-      description: "",
+
     },
     validationSchema: createScheduleValidation,
     onSubmit: async (data, action) => {
@@ -58,11 +65,13 @@ const CreateEvent = ({ open, setOpen }) => {
             >
                 <Box sx={style}>
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                        Text in a modal
+                        Create Event
                     </Typography>
-                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                        Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
-                    </Typography>
+                    <TextField style={{ margin: '10px' }} fullWidth id="filled-basic" label="Event Title" variant="filled" />
+                    <TextField fullWidth id="filled-basic" label="Description" variant="filled" className='' />
+
+                    <Button className='' sx={{ mx: "auto" }} variant="contained">Submit</Button>
+
                 </Box>
             </Modal> */}
       {/* use dialog it's have better designm than modal */}
@@ -90,6 +99,8 @@ const CreateEvent = ({ open, setOpen }) => {
               sx={{ margin: '5px 0' }}
               fullWidth
               name="decription"
+
+              onChange={handleChange}
               label="Description"
               multiline
               rows={3}
@@ -98,8 +109,8 @@ const CreateEvent = ({ open, setOpen }) => {
               variant="outlined"
             />
 
-            <input style={{ width: '100%', border: '1px solid gray' }} type="datetime-local" id="meeting-time"
-              name="meeting-time" />
+            <input value={values.meetingtime} onChange={handleChange} style={{ width: '100%', border: '1px solid gray' }} type="datetime-local" id="meeting-time"
+              name="meetingtime" />
 
           </DialogContent>
           <DialogActions>
