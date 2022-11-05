@@ -23,7 +23,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="/"
+                href="/contact"
                 className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline"
               >
                 Contact us

@@ -12,6 +12,7 @@ import About from "./pages/About";
 import { useAuthContext } from "./hooks/useAuthContext";
 import Events from "./pages/Events";
 import Terms from "./components/SharedComponent/Footer/Terms";
+import Contact from "./components/SharedComponent/Footer/Contact";
 function App() {
   const { user } = useAuthContext();
   console.log(user);
@@ -37,6 +38,8 @@ function App() {
             <Route path="/profile" element={user ? <Profile /> : <Navigate to='/' />} />
 
             <Route path="/terms" element={<Terms />}></Route>
+
+            <Route path="/contact" element={<Contact></Contact>}></Route>
 
 
             <Route path="*" element={<Error404 />} />
