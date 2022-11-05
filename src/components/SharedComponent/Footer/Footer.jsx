@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -58,12 +59,12 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a
-                href="/terms"
+              <Link
+                to="/terms"
                 className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline"
               >
                 Terms & Conditions
-              </a>
+              </Link>
             </li>
             <li>
               <a
