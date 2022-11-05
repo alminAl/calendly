@@ -11,6 +11,7 @@ import Error404 from "./components/SharedComponent/Error404/Error404";
 import About from "./pages/About";
 import { useAuthContext } from "./hooks/useAuthContext";
 import Events from "./pages/Events";
+import Terms from "./components/SharedComponent/Footer/Terms";
 function App() {
   const { user } = useAuthContext();
   console.log(user);
@@ -35,7 +36,7 @@ function App() {
             </Route>
             <Route path="/profile" element={user ? <Profile /> : <Navigate to='/' />} />
 
-
+            <Route path="/terms" element={<Terms />}></Route>
 
 
             <Route path="*" element={<Error404 />} />
