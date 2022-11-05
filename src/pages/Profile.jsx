@@ -1,8 +1,59 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
-import ProfileUpdateModal, { ProfileImage } from '../components/Profile/ProfileUpdateModal';
+
 import useProfileStore from '../store/useProfileStore';
 import shallow from 'zustand/shallow';
+import { useAuthContext } from '../hooks/useAuthContext';
+import { usePatchRequest } from '../hooks/requestMethods';
+import ProfileUpdateModal from '../components/Profile/ProfileUpdateModal';
+
+
+
+
+export const ProfileImage = () => {
+  // glabal storage
+  const [userProfile, setUserProfile] = useProfileStore(
+    (state) => [state.userProfile, state.setUserProfile],
+    shallow
+  );
+  const { user } = useAuthContext();
+  const { data: getUpdateData, updateData } = usePatchRequest()
+
+
+  const fileInput = useRef(null)
+  const handleChange = (e) => {
+    const file = e.target.files[0]
+    const reader = new FileReader()
+    reader.onloadend = () => {
+      const data = {
+        profileImg: reader.result.toString()
+      }
+      updateData('/api/user/profile', user.token, data)
+    }
+    reader.readAsDataURL(file)
+  }
+  useEffect(() => {
+    if (getUpdateData) {
+      setUserProfile(getUpdateData)
+    }
+
+  }, [getUpdateData, setUserProfile])
+  return (
+    <>
+      <label htmlFor="dropzone-file" className='cursor-pointer' onClick={e => fileInput.current && fileInput.current.click()}>
+        <img
+          src={userProfile?.profileImg ? userProfile?.profileImg : 'https://pbs.twimg.com/media/EYVxlOSXsAExOpX.jpg'}
+          alt=''
+          className='inline-block m-auto w-32 h-32 rounded-full md:w-48 md:h-48 md:rounded-full'
+        />
+        <input id='dropzone-file' className='hidden' accept="image/*" multiple type="file" onChange={handleChange} />
+      </label>
+    </>
+  )
+}
+
+
+
 
 const Profile = () => {
 
@@ -76,7 +127,8 @@ const Profile = () => {
           </button>
         </div>
       </div>
-      <ProfileUpdateModal open={open} setOpen={x => setOpen(x)} />
+      {userProfile && <ProfileUpdateModal open={open} setOpen={x => setOpen(x)} />}
+
     </>
   )
 }

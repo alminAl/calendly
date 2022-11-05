@@ -10,7 +10,9 @@ export const authReducer = (state, action) => {
         case "LOGIN":
             return { user: action.payload };
         case "LOGOUT":
-            return { user: null };
+            return {
+                user: null
+            };
         default:
             return state;
     }
@@ -18,12 +20,12 @@ export const authReducer = (state, action) => {
 
 export const AuthContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(authReducer, {
-        user: null,
+        user: null
     });
 
-    // stirage management
+    // state management
     const [setUserProfile] = useProfileStore(
-        (state) => [state.setUserProfile],
+        state => [state.setUserProfile],
         shallow
     );
 

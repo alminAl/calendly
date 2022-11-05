@@ -5,7 +5,7 @@ import create from 'zustand';
 const useProfileStore = create((set, get) => ({
     userProfile: null,
 
-    setUserProfile: (data) =>
+    setUserProfile: data =>
         set({
             userProfile: data
         })
