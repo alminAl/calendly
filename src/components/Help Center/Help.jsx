@@ -5,7 +5,8 @@ const Help = () => {
     <div class="max-w-screen-lg mx-auto p-5">
       <div class="grid grid-cols-1 md:grid-cols-12 border">
         <div class="bg-gray-900 md:col-span-4 p-10 text-white">
-          <p class="mt-4 text-sm leading-7 font-regular uppercase">NEED HELP ?</p>
+          <p class="mt-4 text-xl leading-7 font-regular uppercase">What can we help you with?
+</p>
           <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight">
            Send us <span class="text-indigo-600">Message</span>
           </h3>
