@@ -16,10 +16,11 @@ import Terms from "./components/SharedComponent/Footer/Terms";
 import Contact from "./components/SharedComponent/Footer/Contact";
 
 import Help from "./components/Help Center/Help";
+import ScheduleEvent from "./pages/ScheduleEvent";
 
 function App() {
   const { user } = useAuthContext();
-  console.log(user);
+  // console.log(user);
   return (
     <div>
       <BrowserRouter>
@@ -29,23 +30,36 @@ function App() {
             <Route path="/enterprise" element={<Enterprise />} />
             <Route path="/teams" element={<Teams />} />
             {/* <Route path="/profile" element={!user ? <Profile /> : <Navigate to='/login' />} /> */}
-            <Route path="/login" element={!user ? <Login /> : <Navigate to='/' />} />
-            <Route path="/signup" element={!user ? <Signup /> : <Navigate to='/' />} />
+            <Route
+              path="/login"
+              element={!user ? <Login /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/signup"
+              element={!user ? <Signup /> : <Navigate to="/" />}
+            />
 
             {/* <Route path="/login" element={<Login />} /> */}
             {/* <Route path="/signup" element={<Signup />} /> */}
 
             <Route path="/about" element={<About />} />
-            <Route path="/events" element={user ? <Events /> : <Navigate to='/' />}>
-
-            </Route>
-            <Route path="/profile" element={user ? <Profile /> : <Navigate to='/' />} />
+            <Route
+              path="/events"
+              element={user ? <Events /> : <Navigate to="/" />}
+            ></Route>
+            <Route
+              path="/profile"
+              element={user ? <Profile /> : <Navigate to="/" />}
+            />
+            <Route
+              path="/scheduleEvent"
+              element={user ? <ScheduleEvent /> : <Navigate to="/" />}
+            />
 
             <Route path="/terms" element={<Terms />}></Route>
             <Route path="/help" element={<Help />}></Route>
 
             <Route path="/contact" element={<Contact></Contact>}></Route>
-
 
             <Route path="*" element={<Error404 />} />
           </Routes>
