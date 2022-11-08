@@ -75,13 +75,13 @@ const Profile = () => {
   return (
     <>
       <div className="lg:w-9/12 m-auto space-y-6 px-4">
-        <div className="text-end py-10">
+        {/* <div className="text-end py-10">
           <Link to="/scheduleEvent">
             <button className="text-base uppercase font-semibold text-white bg-zinc-800 px-6 py-3 rounded-xl hover:bg-white hover:text-black hover:border-black hover:ring-2 hover:ring-black hover:duration-500">
               schedule event
             </button>
           </Link>
-        </div>
+        </div> */}
         <div className="text-center space-y-2">
           <ProfileImage />
           <p className="capitalize text-xl font-extrabold">
