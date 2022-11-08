@@ -29,22 +29,22 @@ const Footer = () => {
                 Contact us
               </a>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="/"
                 className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline"
               >
                 Newsroom
               </a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a
                 href="/"
                 className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline"
               >
                 Careers
               </a>
-            </li>
+            </li> */}
           </ul>
           <ul className="text-gray-700 list-none p-0 font-bold flex flex-col text-left w-full">
             <li className="inline-block py-2 px-3 text-white uppercase font-medium tracking-wide">
@@ -66,14 +66,14 @@ const Footer = () => {
                 Terms & Conditions
               </Link>
             </li>
-            <li>
+            {/* <li>
               <a
                 href="/"
                 className="inline-block py-2 pl-3 pr-5 text-gray-500 hover:text-white no-underline"
               >
                 Cookie Settings
               </a>
-            </li>
+            </li> */}
           </ul>
 
           <div className="text-gray-700 flex flex-col w-full">
