@@ -23,8 +23,8 @@ function App() {
             <Route path="/enterprise" element={<Enterprise />} />
             <Route path="/teams" element={<Teams />} />
             {/* <Route path="/profile" element={!user ? <Profile /> : <Navigate to='/login' />} /> */}
-            <Route path="/login" element={!user ? <Login /> : <Navigate to='/' />} />
-            <Route path="/signup" element={!user ? <Signup /> : <Navigate to='/' />} />
+            <Route path="/login" element={!user ? <Login /> : <Navigate to='/profile' />} />
+            <Route path="/signup" element={!user ? <Signup /> : <Navigate to='/profile' />} />
 
             {/* <Route path="/login" element={<Login />} /> */}
             {/* <Route path="/signup" element={<Signup />} /> */}
