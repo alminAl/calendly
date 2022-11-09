@@ -1,4 +1,5 @@
 import { Avatar, MenuItem } from "@mui/material";
+// import { useState } from "react";
 // import React, { useState } from "react";
 
 import { NavLink, Link } from "react-router-dom";
@@ -21,6 +22,18 @@ const Navbar = () => {
 
   const { logout } = useLogout();
   const { user } = useAuthContext();
+
+
+
+
+  // let Links = [
+  //   { name: "Home", link: "/" },
+  //   { name: "About", link: "/" },
+  //   { name: "Services", link: "/" },
+
+  //   { account: "Login/Log out", link: "/login" },
+  // ];
+  // let [open, setOpen] = useState(false);
   return (
     <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -36,13 +49,37 @@ const Navbar = () => {
               {" "}
               {user ? (
 
-                <button
-                  className="text-lg font-bold block py-2 pr-4 pl-3 text-red-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  aria-current="page"
-                  onClick={() => logout()}
-                >
-                  Log out
-                </button>
+                <>
+                  <ul className="flex ">
+                    <li>
+                      <Link to={"/profile"}>
+                        <MenuItem className='hover:bg-transparent'>
+                          <Avatar alt={userProfile?.name} src={userProfile?.profile_image ? userProfile?.profile_image : "#"} /> {' '} <span>{userProfile?.name}</span>
+                        </MenuItem>
+                      </Link>
+                    </li>
+
+                    <li>
+                      <button
+                        className="text-lg font-bold block py-2 pr-4 pl-3 text-red-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                        aria-current="page"
+                        onClick={() => logout()}
+                      >
+                        Log out
+                      </button>
+                    </li>
+                  </ul>
+
+                </>
+
+
+                // <button
+                //   className="text-lg font-bold block py-2 pr-4 pl-3 text-red-500 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                //   aria-current="page"
+                //   onClick={() => logout()}
+                // >
+                //   Log out
+                // </button>
               ) : (
                 <NavLink
                   to="/login"
@@ -130,29 +167,29 @@ const Navbar = () => {
               </NavLink>
             </li>
 
-            <li>
+            {/* <li>
               {user && userProfile && (
                 <>
                   <Link to={"/profile"}>
                     <MenuItem className='hover:bg-transparent'>
-                      <Avatar alt={userProfile?.name} src={userProfile?.profile_image ? userProfile?.profile_image : "#"} /> <span>{userProfile?.name}</span>
+                      <Avatar alt={userProfile?.name} src={userProfile?.profile_image ? userProfile?.profile_image : "#"} /> {' '} <span>{userProfile?.name}</span>
                     </MenuItem>
                   </Link>
 
 
 
 
-                  {/* <li className='lg:flex items-center space-x-3 text-base lg:my-0 my-7'>
+                  <li className='lg:flex items-center space-x-3 text-base lg:my-0 my-7'>
                   <span className='text-base  text-black font-sans'></span>
                   <button
                     onClick={() => logout()}
                     className='border-2 text-[#106731] border-[#106731] px-4 py-2 rounded-lg uppercase hover:text-white hover:bg-[#106731] duration-200'>
                     logout
                   </button>
-                </li>  */}
+                </li> 
                 </>
               )}
-            </li>
+            </li> */}
 
           </ul>
         </div>

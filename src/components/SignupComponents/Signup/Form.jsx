@@ -7,8 +7,9 @@ const Form = () => {
     const [email, setEmail] = useState('')
 
     const [mobile_number, setMobile] = useState('');
-    const [password, setPassword] = useState('')
     const [about, setAbout] = useState('');
+    const [password, setPassword] = useState('')
+
     const { signup, error, isLoading } = useSignup()
 
     const handleSubmit = (e) => {

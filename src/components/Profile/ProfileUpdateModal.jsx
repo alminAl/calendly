@@ -3,7 +3,7 @@ import { useFormik } from "formik"
 import shallow from "zustand/shallow";
 import { userProfileUpdateValidation } from "../../validators/profileValidations";
 import useProfileStore from "../../store/useProfileStore";
-import { LoadingButton } from "@mui/lab";
+
 import SaveIcon from "@mui/icons-material/Save";
 import { usePatchRequest } from "../../hooks/requestMethods";
 import { useAuthContext } from "../../hooks/useAuthContext";
@@ -17,7 +17,7 @@ export const ProfileImage = () => {
     );
     const { user } = useAuthContext();
     const { data: getUpdateData, updateData } = usePatchRequest()
-
+    console.log(user);
 
     const fileInput = useRef(null)
     const handleChange = (e) => {
@@ -27,7 +27,7 @@ export const ProfileImage = () => {
             const data = {
                 profile_image: reader.result.toString()
             }
-            updateData('/api/user/profile/', user.token, data)
+            updateData('/api/user/profile', user.token, data)
         }
         reader.readAsDataURL(file)
     }
@@ -41,7 +41,7 @@ export const ProfileImage = () => {
         <>
             <label htmlFor="dropzone-file" className='cursor-pointer' onClick={e => fileInput.current && fileInput.current.click()}>
                 <img
-                    src={userProfile?.profile_image ? userProfile?.profile_image : 'https://pbs.twimg.com/media/EYVxlOSXsAExOpX.jpg'}
+                    src={userProfile.profile_image ? userProfile.profile_image : 'https://pbs.twimg.com/media/EYVxlOSXsAExOpX.jpg'}
                     alt=''
                     className='inline-block m-auto w-32 h-32 rounded-full md:w-48 md:h-48 md:rounded-full'
                 />
@@ -55,12 +55,12 @@ export const ProfileImage = () => {
 const ProfileUpdateModal = ({ open, setOpen }) => {
     // glabal storage
     const [userProfile, setUserProfile] = useProfileStore(
-        (state) => [state.userProfile, state.setUserProfile],
+        state => [state.userProfile, state.setUserProfile],
         shallow
     );
     const { user } = useAuthContext();
-    const { data: getUpdateData, updateData, error } = usePatchRequest()
-    console.log(error);
+    const { data: getUpdateData, updateData, } = usePatchRequest()
+
 
     /** form submision */
     const {
@@ -75,20 +75,18 @@ const ProfileUpdateModal = ({ open, setOpen }) => {
         // resetForm,
     } = useFormik({
         initialValues: {
-            name: userProfile?.name ?? '',
-            // email: userProfile?.email ?? '',
-            mobile_number: userProfile?.mobile_number ?? '',
-            about: userProfile?.about ?? '',
+            name: userProfile.name ?? '',
+            // email: userProfile.email ?? '',
+            mobile_number: userProfile.mobile_number ?? '',
+            about: userProfile.about ?? '',
         },
         validationSchema: userProfileUpdateValidation,
         onSubmit: async (data, action) => {
-            console.log(data);
+
             try {
                 updateData('/api/user/profile/', user.token, data)
                 setOpen(!open)
             } catch (error) {
-
-                console.log(error)
             }
         },
     })
@@ -184,7 +182,7 @@ const ProfileUpdateModal = ({ open, setOpen }) => {
                         </DialogContent>
                         <DialogActions>
                             <Button onClick={() => setOpen(!open)}>Disagree</Button>
-                            <LoadingButton
+                            <Button
                                 // fullWidth
                                 variant="outlined"
                                 type="submit"
@@ -193,7 +191,7 @@ const ProfileUpdateModal = ({ open, setOpen }) => {
                                 startIcon={<SaveIcon />}
                             >
                                 Save
-                            </LoadingButton>
+                            </Button>
                         </DialogActions>
                     </form>
                 </Dialog>
