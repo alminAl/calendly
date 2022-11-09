@@ -12,15 +12,13 @@ import About from "./pages/About";
 import { useAuthContext } from "./hooks/useAuthContext";
 import Events from "./pages/Events";
 import Terms from "./components/SharedComponent/Footer/Terms";
-
 import Contact from "./components/SharedComponent/Footer/Contact";
-
 import Help from "./components/Help Center/Help";
-// import ScheduleEvent from "./pages/ScheduleEvent";
+import ScheduleEvent from "./pages/ScheduleEvent";
+import EventType from "./pages/EventType";
 
 function App() {
   const { user } = useAuthContext();
-  // console.log(user);
   return (
     <div>
       <BrowserRouter>
@@ -51,10 +49,14 @@ function App() {
               path="/profile"
               element={user ? <Profile /> : <Navigate to="/" />}
             />
-            {/* <Route
+            <Route
+              path="/eventType"
+              element={user ? <EventType /> : <Navigate to="/" />}
+            />
+            <Route
               path="/scheduleEvent"
               element={user ? <ScheduleEvent /> : <Navigate to="/" />}
-            /> */}
+            />
 
             <Route path="/terms" element={<Terms />}></Route>
             <Route path="/help" element={<Help />}></Route>

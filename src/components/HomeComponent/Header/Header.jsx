@@ -5,7 +5,7 @@ const Header = () => {
     <div
       className="relative h-screen w-full flex items-center justify-center text-center bg-cover bg-center"
       style={{
-        "backgroundImage":
+        backgroundImage:
           "url(https://images.ctfassets.net/k0lk9kiuza3o/4L2IHsOUMgTUjPxcUbzoyz/2111a84d62f23ade75054f48bdeda0b2/Customer_Success.jpg?w=1920&h=1081&q=50&fm=webp)",
       }}
     >

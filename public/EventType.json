@@ -1,0 +1,26 @@
+[
+    {
+        "id": "01",
+        "img": "https://assets.calendly.com/packs/frontend/media/one_on_one-6206433649431f0b4804.svg",
+        "title": "One-on-One",
+        "description": "Let an invitee pick a time to meet with you."
+    },
+    {
+        "id": "02",
+        "img": "https://assets.calendly.com/packs/frontend/media/group-7eac5d967740a9799590.svg",
+        "title": "Group",
+        "description": "Let multiple invitees meet with you at one time."
+    },
+    {
+        "id": "03",
+        "img": "https://assets.calendly.com/packs/frontend/media/collective-4e201a8dd006b0d78f95.svg",
+        "title": "Collective",
+        "description": "Host an event with another person and let invitees pick a time when you’re all available."
+    },
+    {
+        "id": "04",
+        "img": "https://assets.calendly.com/packs/frontend/media/round_robin-310498d275de8c1f7e4a.svg",
+        "title": "Round Robin",
+        "description": "Create an event that cycles between multiple hosts."
+    }
+]
